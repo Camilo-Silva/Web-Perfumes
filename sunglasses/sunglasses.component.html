@@ -1,0 +1,24 @@
+<main class="sunglasses-body">
+  <section class="sunglasses-list">
+    <h2 class="section-title">Sunglasses</h2>
+    <ng-container *ngIf="(productos$ | async) as productos; else noProductos">
+      <div class="sunglasses-carousel-controls">
+        <button class="sunglasses-carousel-btn" (click)="prev()" [disabled]="currentIndex === 0">&#8592;</button>
+        <button class="sunglasses-carousel-btn" (click)="next(productos.length)" [disabled]="currentIndex + itemsPerPage >= productos.length">&#8594;</button>
+      </div>
+      <div class="sunglasses-row">
+        <div *ngFor="let producto of productos.slice(currentIndex, currentIndex + itemsPerPage)" class="sunglasses-item">
+          <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="sunglasses-img" />
+          <div>
+            <h3>{{ producto.nombre }} <span>({{ producto.marca }})</span></h3>
+            <p>{{ producto.descripcion }}</p>
+            <strong>{{ producto.precio | currency:'ARS':'symbol':'1.0-0' }}</strong>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noProductos>
+      <p>No hay productos disponibles.</p>
+    </ng-template>
+  </section>
+</main>

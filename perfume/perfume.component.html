@@ -1,0 +1,26 @@
+<main class="perfume-body">
+  <section class="perfume-list">
+    <h2 class="section-title">Perfumes</h2>
+    <ng-container *ngIf="(perfumes$ | async) as perfumes; else noPerfumes">
+      <div class="perfume-carousel-controls">
+        <button class="perfume-carousel-btn" (click)="prev()" [disabled]="currentIndex === 0">&#8592;</button>
+        <button class="perfume-carousel-btn" (click)="next(perfumes.length)" [disabled]="currentIndex + itemsPerPage >= perfumes.length">&#8594;</button>
+      </div>
+      <div class="perfume-row">
+        <div *ngFor="let perfume of perfumes.slice(currentIndex, currentIndex + itemsPerPage)" class="perfume-item">
+          <img [src]="perfume.imagen" alt="{{ perfume.nombre }}" class="perfume-img" />
+          <div>
+            <h3>{{ perfume.nombre }} <span>({{ perfume.marca }})</span></h3>
+            <p>{{ perfume.descripcion }}</p>
+            <strong>{{ perfume.precio | currency:'ARS':'symbol':'1.0-0' }}</strong>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noPerfumes>
+      <p>No hay perfumes disponibles.</p>
+    </ng-template>
+  </section>
+  <app-sunglasses></app-sunglasses>
+</main>
+

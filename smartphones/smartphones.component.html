@@ -1,0 +1,24 @@
+<main class="smartphone-body">
+  <section class="smartphone-list">
+    <h2 class="section-title">Smartphones</h2>
+    <ng-container *ngIf="(smartphones$ | async) as smartphones; else noSmartphones">
+      <div class="smartphone-carousel-controls">
+        <button class="smartphone-carousel-btn" (click)="prev()" [disabled]="currentIndex === 0">&#8592;</button>
+        <button class="smartphone-carousel-btn" (click)="next(smartphones.length)" [disabled]="currentIndex + itemsPerPage >= smartphones.length">&#8594;</button>
+      </div>
+      <div class="smartphone-row">
+        <div *ngFor="let smartphone of smartphones.slice(currentIndex, currentIndex + itemsPerPage)" class="smartphone-item">
+          <img [src]="smartphone.imagen" alt="{{ smartphone.nombre }}" class="smartphone-img" />
+          <div>
+            <h3>{{ smartphone.nombre }} <span>({{ smartphone.marca }})</span></h3>
+            <p>{{ smartphone.descripcion }}</p>
+            <strong>{{ smartphone.precio | currency:'ARS':'symbol':'1.0-0' }}</strong>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noSmartphones>
+      <p>No hay smartphones disponibles.</p>
+    </ng-template>
+  </section>
+</main>

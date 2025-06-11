@@ -1,0 +1,109 @@
+.main-footer {
+  background: #833ab4;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  border-radius: 0 0 1rem 1rem;
+  margin-top: 2rem;
+}
+
+.perfume-header {
+  background: linear-gradient(90deg, #fcb045 0%, #fd1d1d 50%, #833ab4 100%);
+  color: #fff;
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.perfume-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.perfume-intro {
+  max-width: 600px;
+  text-align: center;
+  margin: 2rem auto 2rem auto;
+}
+
+.perfume-intro h2 {
+  color: #833ab4;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.perfume-intro p {
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.other-categories {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.other-categories h2 {
+  color: #833ab4;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.category-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-tecnologia {
+  background: linear-gradient(90deg, #1976d2 0%, #00bcd4 100%);
+  color: #fff;
+  padding: 1.25rem 3rem;
+  border-radius: 2.5rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  border: none;
+  box-shadow: 0 6px 24px 0 rgba(25, 118, 210, 0.18), 0 1.5px 4px 0 #e3f0fa, 0 1.5px 0 #fff inset;
+  transition: background 0.18s, color 0.18s, transform 0.15s, box-shadow 0.18s;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 1px;
+  outline: none;
+  margin: 1.5rem auto 2.5rem auto;
+  filter: drop-shadow(0 2px 8px rgba(25, 118, 210, 0.10));
+}
+
+.btn-tecnologia:hover, .btn-tecnologia:focus {
+  background: linear-gradient(90deg, #00bcd4 0%, #1976d2 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 32px 0 rgba(25, 118, 210, 0.22), 0 2px 8px 0 #e3f0fa, 0 2px 0 #fff inset;
+}
+
+.category-links a {
+  color: #833ab4;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.category-links a:not(.btn-tecnologia):hover {
+  background: #f7f7fa;
+  color: #fd1d1d;
+}
+
+@media (max-width: 600px) {
+  .btn-tecnologia {
+    font-size: 1.1rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 2rem;
+  }
+}

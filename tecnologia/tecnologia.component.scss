@@ -1,0 +1,40 @@
+.tecnologia-section {
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 2rem 1rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2rem 0 2.5rem 0;
+  letter-spacing: 1px;
+  color: #1976d2;
+}
+
+app-laptops, app-smartphones {
+  display: block;
+  margin-bottom: 0;
+}
+
+.laptop-body, .smartphone-body {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.laptop-list, .smartphone-list {
+  margin-bottom: 0;
+}
+
+/* Espacio uniforme solo entre los componentes, no extra */
+app-laptops + app-smartphones {
+  margin-top: 2rem;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+  app-laptops + app-smartphones {
+    margin-top: 1.2rem;
+  }
+}

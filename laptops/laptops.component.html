@@ -1,0 +1,25 @@
+<main class="laptop-body">
+  <section class="laptop-list">
+    <h2 class="section-title">Laptops</h2>
+    <ng-container *ngIf="(laptops$ | async) as laptops; else noLaptops">
+      <div class="laptop-carousel-controls">
+        <button class="laptop-carousel-btn" (click)="prev()" [disabled]="currentIndex === 0">&#8592;</button>
+        <button class="laptop-carousel-btn" (click)="next(laptops.length)" [disabled]="currentIndex + itemsPerPage >= laptops.length">&#8594;</button>
+      </div>
+      <div class="laptop-row">
+        <div *ngFor="let laptop of laptops.slice(currentIndex, currentIndex + itemsPerPage)" class="laptop-item">
+          <img [src]="laptop.imagen" alt="{{ laptop.nombre }}" class="laptop-img" />
+          <div>
+            <h3>{{ laptop.nombre }} <span>({{ laptop.marca }})</span></h3>
+            <p>{{ laptop.descripcion }}</p>
+            <strong>{{ laptop.precio | currency:'ARS':'symbol':'1.0-0' }}</strong>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noLaptops>
+      <p>No hay laptops disponibles.</p>
+    </ng-template>
+  </section>
+  <!-- <app-smartphones></app-smartphones> -->
+</main>

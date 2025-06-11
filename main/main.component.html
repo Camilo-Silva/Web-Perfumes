@@ -1,0 +1,21 @@
+<header class="perfume-header">
+  <h1>Perfumes Extraction</h1>
+</header>
+<section class="perfume-intro">
+  <h2>Bienvenido a Perfumes Extraction</h2>
+  <p>Descubre una exclusiva selección de perfumes de las mejores marcas. Explora nuestras fragancias y encuentra la que mejor se adapta a tu personalidad.</p>
+</section>
+<main class="main">
+  <router-outlet></router-outlet>
+   <!-- <app-perfume></app-perfume> -->
+  <section class="other-categories">
+    <h2>Otras categorías</h2>
+    <nav class="category-links">
+      <button *ngIf="!isTecnologia" class="btn-tecnologia" (click)="goToTecnologia()">Ver Tecnología</button>
+      <button *ngIf="isTecnologia" class="btn-tecnologia" (click)="goToPerfumes()">Volver a Perfumes</button>
+    </nav>
+  </section>
+</main>
+<footer class="main-footer">
+  <p>&copy; 2025 Perfumes Extraction. Todos los derechos reservados.</p>
+</footer>
